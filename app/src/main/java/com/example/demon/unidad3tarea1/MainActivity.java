@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -25,7 +24,6 @@ import android.app.Activity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 public class MainActivity extends Activity {
 
@@ -34,16 +32,17 @@ public class MainActivity extends Activity {
     ListView listView;
     ArrayAdapter<String> itemsAdapter;
     ArrayList<String> lista = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        etResponse = (EditText) findViewById(R.id.etResponse);
+        etResponse = (EditText) findViewById(R.id.text);
         tvIsConnected = (TextView) findViewById(R.id.tvIsConnected);
         listView = (ListView) findViewById(R.id.lv);
         itemsAdapter =
-                new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1,lista);
+                new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, lista);
 
         if (isConnected()) {
             tvIsConnected.setBackgroundColor(0xFF00CC00);
@@ -109,13 +108,13 @@ public class MainActivity extends Activity {
             Toast.makeText(getBaseContext(), "Info recibida!", Toast.LENGTH_LONG).show();
             etResponse.setText(result);
 
-            try{
-                System.out.println("LLEGO");
+            try {
+                //  System.out.println("LLEGO");
                 lista = parseJSONObjects(result);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            System.out.println("PASO");
+            //System.out.println("PASO");
             if (!lista.isEmpty()) {
 
 
@@ -143,6 +142,7 @@ public class MainActivity extends Activity {
             return list;
 
         }
+
     }
 }
 

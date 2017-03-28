@@ -17,13 +17,11 @@
         android:id="@+id/tvIsConnected" />
 
     <EditText
-        android:id="@+id/etResponse"
+        android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/tvIsConnected"
-        android:layout_marginTop="18dp"
         android:ems="10"
         android:singleLine="true"
         android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
@@ -35,5 +33,5 @@
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/etResponse" />
+        android:layout_below="@+id/text" />
 </RelativeLayout>
